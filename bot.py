@@ -10,10 +10,10 @@ import asyncio
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Your bot token from BotFather
-TOKEN = "8369143504:AAEDHgc_tB-GVniJjS32SVSF5pbCOli7oK8"
-# Your group chat ID (you'll get this later)
-GROUP_CHAT_ID = "-1003072701582"  # Example placeholder, will update
+# Your bot token from BotFather (set as environment variable on Railway)
+TOKEN = os.environ.get('TOKEN')
+# Your group chat ID
+GROUP_CHAT_ID = "-1003072701582"
 
 # Store user payment times (in a real bot, use a database)
 user_payment_times = {}
@@ -59,5 +59,4 @@ def main():
     logger.info("Bot is running...")
 
 if __name__ == '__main__':
-
     main()
